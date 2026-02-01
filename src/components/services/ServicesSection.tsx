@@ -3,8 +3,11 @@
 import { Container, SectionHeader } from "@/components/ui";
 import { ServiceTicker } from "./ServiceTicker";
 import { PriceList } from "./PriceList";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ServicesSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="servicii-preturi" className="bg-[#0f1419]">
       {/* Service Ticker */}
@@ -14,9 +17,9 @@ export function ServicesSection() {
       <div className="py-10 md:py-14">
         <Container>
           <SectionHeader
-            marker="Prețuri"
-            title="Servicii și Tarife"
-            subtitle="Investește în sănătatea ta cu serviciile noastre profesionale de recuperare medicală."
+            marker={t.services.marker}
+            title={t.services.title}
+            subtitle={t.services.subtitle}
             variant="dark"
           />
 

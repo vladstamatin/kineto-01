@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface VideoRowProps {
   videoSrc?: string;
@@ -73,11 +74,13 @@ function VideoRow({ videoSrc, text, textPosition = "center", height = 200, mobil
 }
 
 export function HeroSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="sus" className="relative z-0">
       {/* Row 1: Cinematic closeup - text at bottom */}
       <VideoRow
-        text="Salut"
+        text={t.hero.hello}
         textPosition="bottom"
         height={360}
         mobileHeight={200}
@@ -89,7 +92,7 @@ export function HeroSection() {
 
       {/* Row 2: Kinetotherapy massage */}
       <VideoRow
-        text="Kinetoterapie"
+        text={t.hero.kinetotherapy}
         height={360}
         mobileHeight={200}
         videoSrc="/videos/Kinetotherapy_manual_massage_1080p_2026020119.mp4"
@@ -100,7 +103,7 @@ export function HeroSection() {
 
       {/* Row 3: Yoga/Pilates */}
       <VideoRow
-        text="Yoga · Pilates"
+        text={t.hero.yogaPilates}
         height={360}
         mobileHeight={200}
         videoSrc="/videos/Yoga_pillates_video_1080p_202602011943.mp4"

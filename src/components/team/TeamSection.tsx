@@ -2,15 +2,18 @@
 
 import { Container, SectionHeader } from "@/components/ui";
 import { TeamGrid } from "./TeamGrid";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function TeamSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="echipa" className="py-16 bg-[#1e2736]">
       <Container>
         <SectionHeader
-          marker="Echipa"
-          title="Specialiștii Noștri"
-          subtitle="O echipă dedicată de profesioniști cu experiență vastă în recuperare medicală și wellness."
+          marker={t.team.marker}
+          title={t.team.title}
+          subtitle={t.team.subtitle}
           align="center"
           variant="dark"
         />

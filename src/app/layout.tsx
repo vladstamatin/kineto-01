@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -32,7 +33,9 @@ export default function RootLayout({
   return (
     <html lang="ro">
       <body className={`${manrope.variable} font-sans antialiased`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
