@@ -137,7 +137,7 @@ export function Navbar() {
               )}
             >
               <Phone className="w-4 h-4" />
-              <span>060 123 456</span>
+              <span className="hidden sm:inline">060 123 456</span>
             </a>
 
             {/* Language switcher */}
