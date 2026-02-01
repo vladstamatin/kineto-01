@@ -1,26 +1,358 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   REBALANCE Design System
+   Theme: "Clinical Serenity" meets "Editorial Medical"
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ═══════════════════════════════════════════════════════════
+     PRIMARY PALETTE
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Rebalance Turquoise - Primary brand accent, CTAs, highlights */
+  --color-primary: #00c4cc;
+  --color-primary-hover: #00b0b8;
+  --color-primary-light: #33cfd6;
+  --color-primary-opacity-10: rgba(0, 196, 204, 0.1);
+  --color-primary-opacity-20: rgba(0, 196, 204, 0.2);
+
+  /* Deep Medical Navy - Headers, navigation, authority text */
+  --color-navy: #1f2a38;
+  --color-navy-light: #2a3847;
+  --color-navy-dark: #151d26;
+
+  /* ═══════════════════════════════════════════════════════════
+     SECONDARY PALETTE
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Slate Grey - Body text, softer than black */
+  --color-slate: #4a5568;
+  --color-slate-light: #718096;
+  --color-slate-dark: #2d3748;
+
+  /* Muted Sage - Background accent for "calm" zones */
+  --color-sage: #e6fffa;
+  --color-sage-dark: #b2f5ea;
+
+  /* ═══════════════════════════════════════════════════════════
+     NEUTRAL PALETTE
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Backgrounds */
+  --color-white: #ffffff;
+  --color-off-white: #fafafa;
+  --color-light-grey: #f8f9fa;
+  --color-grey-100: #f1f3f4;
+  --color-grey-200: #e2e8f0;
+  --color-grey-300: #cbd5e0;
+
+  /* Text on dark backgrounds */
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.7);
+  --color-text-on-dark-subtle: rgba(255, 255, 255, 0.5);
+
+  /* ═══════════════════════════════════════════════════════════
+     SEMANTIC COLORS
+     ═══════════════════════════════════════════════════════════ */
+
+  --color-success: #38a169;
+  --color-warning: #d69e2e;
+  --color-error: #e53e3e;
+  --color-info: var(--color-primary);
+
+  /* ═══════════════════════════════════════════════════════════
+     OVERLAY & SHADOW COLORS
+     ═══════════════════════════════════════════════════════════ */
+
+  --overlay-dark: rgba(0, 0, 0, 0.3);
+  --overlay-darker: rgba(0, 0, 0, 0.6);
+  --overlay-light: rgba(255, 255, 255, 0.1);
+
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-color-medium: rgba(0, 0, 0, 0.1);
+  --shadow-color-strong: rgba(0, 0, 0, 0.15);
+
+  /* ═══════════════════════════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════════════════════════ */
+
+  /* Font Family */
+  --font-primary: "Manrope", "Plus Jakarta Sans", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, sans-serif;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.6;
+  --leading-loose: 2;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ═══════════════════════════════════════════════════════════
+     SPACING SCALE (4px base)
+     ═══════════════════════════════════════════════════════════ */
+
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
+  --space-24: 6rem; /* 96px */
+  --space-32: 8rem; /* 128px */
+
+  /* ═══════════════════════════════════════════════════════════
+     COMPONENT SPACING
+     ═══════════════════════════════════════════════════════════ */
+
+  --nav-height: 100px;
+  --section-padding-y: var(--space-24);
+  --section-padding-y-mobile: var(--space-16);
+  --container-padding-x: var(--space-6);
+  --card-gap: var(--space-2); /* 8px - Team cards */
+  --card-gap-lg: var(--space-4); /* 16px - General cards */
+
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  /* ═══════════════════════════════════════════════════════════
+     BUTTON SIZING
+     ═══════════════════════════════════════════════════════════ */
+
+  --btn-height-sm: 36px;
+  --btn-height-md: 44px;
+  --btn-height-lg: 52px;
+  --btn-padding-x: var(--space-6);
+  --btn-radius: 8px;
+  --btn-radius-full: 9999px;
+
+  /* ═══════════════════════════════════════════════════════════
+     CARD STYLING
+     ═══════════════════════════════════════════════════════════ */
+
+  --card-radius: 12px;
+  --card-radius-lg: 24px;
+
+  /* ═══════════════════════════════════════════════════════════
+     SHADOWS
+     ═══════════════════════════════════════════════════════════ */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 4px 20px rgba(0, 196, 204, 0.2);
+
+  /* ═══════════════════════════════════════════════════════════
+     GRADIENTS
+     ═══════════════════════════════════════════════════════════ */
+
+  --gradient-brand: linear-gradient(135deg, #00c4cc 0%, #00a3a9 100%);
+  --gradient-overlay-name: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6) 0%,
+    transparent 40%
+  );
+  --gradient-overlay-video: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  --gradient-fluid-shape: radial-gradient(
+    ellipse at center,
+    var(--color-primary-opacity-10) 0%,
+    transparent 70%
+  );
+
+  /* ═══════════════════════════════════════════════════════════
+     ANIMATION TIMING
+     ═══════════════════════════════════════════════════════════ */
+
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 500ms;
+
+  --ease-default: ease;
+  --ease-in: ease-in;
+  --ease-out: ease-out;
+  --ease-in-out: ease-in-out;
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-snappy: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* ═══════════════════════════════════════════════════════════
+     Z-INDEX SCALE
+     ═══════════════════════════════════════════════════════════ */
+
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 900;
+  --z-modal: 950;
+  --z-navbar: 1000;
+  --z-tooltip: 1100;
+
+  /* ═══════════════════════════════════════════════════════════
+     BREAKPOINTS (for reference in JS)
+     ═══════════════════════════════════════════════════════════ */
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-slate);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ═══════════════════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(5px);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-slow) var(--ease-soft) forwards;
+}
+
+.animate-fade {
+  animation: fadeIn var(--duration-slow) var(--ease-default);
+}
+
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-snappy);
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Fluid background shapes */
+.fluid-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--gradient-fluid-shape);
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Video overlay */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  pointer-events: none;
 }
