@@ -13,14 +13,14 @@ function PriceRow({ name, price, isPackage }: PriceRowProps) {
     <div
       className={cn(
         "flex items-center justify-between py-2 px-3 rounded-lg",
-        "bg-white/5 hover:bg-white/10 transition-colors",
+        "bg-white hover:bg-[var(--color-grey-100)] transition-colors shadow-sm",
         isPackage && "border-l-2 border-[var(--color-primary)]"
       )}
     >
-      <span className="text-sm font-medium text-white">
+      <span className="text-sm font-medium text-[var(--color-slate-dark)]">
         {name}
       </span>
-      <span className="text-sm font-bold text-[var(--color-primary)] ml-4">
+      <span className="text-sm font-bold text-[var(--color-primary-hover)] ml-4">
         {price}
       </span>
     </div>
@@ -34,8 +34,8 @@ interface PriceCardProps {
 
 function PriceCard({ title, items }: PriceCardProps) {
   return (
-    <div className="bg-white/[0.03] rounded-xl p-5 border border-white/10">
-      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-[var(--color-primary)] mb-4">
+    <div className="bg-white rounded-xl p-5 border border-[var(--color-grey-200)] shadow-md">
+      <h3 className="text-sm font-bold uppercase tracking-[0.1em] text-[var(--color-primary-hover)] mb-4">
         {title}
       </h3>
       <div className="space-y-2">

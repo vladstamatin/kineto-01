@@ -8,14 +8,14 @@ export function TeamSection() {
   const { t } = useLanguage();
   
   return (
-    <section id="echipa" className="py-16 bg-[#1e2736]">
+    <section id="echipa" className="py-16 bg-[var(--color-section-alt)]">
       <Container>
         <SectionHeader
           marker={t.team.marker}
           title={t.team.title}
           subtitle={t.team.subtitle}
           align="center"
-          variant="dark"
+          variant="light"
         />
 
         <TeamGrid />

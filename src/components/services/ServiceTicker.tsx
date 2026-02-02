@@ -19,7 +19,7 @@ export function ServiceTicker() {
   ];
 
   return (
-    <div className="relative overflow-hidden py-5 bg-[#0f1419]">
+    <div className="relative overflow-hidden py-5 bg-[var(--color-navy)]">
       {/* Single horizontal scrolling row */}
       <div className="flex animate-marquee whitespace-nowrap">
         {/* First set */}

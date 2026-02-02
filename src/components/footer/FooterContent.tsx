@@ -16,7 +16,7 @@ const quickLinks = [
 
 export function FooterContent() {
   return (
-    <div className="bg-[#151b24] text-white h-full p-6 lg:p-10 relative overflow-hidden">
+    <div className="bg-[var(--color-navy)] text-white h-full p-6 lg:p-10 relative overflow-hidden">
       {/* Content Grid - 2x2 Quadrants */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 h-full relative z-10">
         {/* Q1: Locations (Top-Left) */}

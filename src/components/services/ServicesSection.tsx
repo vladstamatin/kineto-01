@@ -9,7 +9,7 @@ export function ServicesSection() {
   const { t } = useLanguage();
   
   return (
-    <section id="servicii-preturi" className="bg-[#0f1419]">
+    <section id="servicii-preturi" className="bg-[var(--color-section-light)]">
       {/* Service Ticker */}
       <ServiceTicker />
 
@@ -20,7 +20,7 @@ export function ServicesSection() {
             marker={t.services.marker}
             title={t.services.title}
             subtitle={t.services.subtitle}
-            variant="dark"
+            variant="light"
           />
 
           {/* Mobile Image - shown at top on small screens */}

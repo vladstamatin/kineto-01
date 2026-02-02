@@ -47,6 +47,11 @@
   --color-grey-200: #e2e8f0;
   --color-grey-300: #cbd5e0;
 
+  /* Light Section Backgrounds */
+  --color-section-light: #f8fafa;
+  --color-section-alt: #f0f7f7;
+  --color-section-sage: #e8f5f4;
+
   /* Text on dark backgrounds */
   --color-text-on-dark: #ffffff;
   --color-text-on-dark-muted: rgba(255, 255, 255, 0.7);
