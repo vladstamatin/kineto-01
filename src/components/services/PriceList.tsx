@@ -51,28 +51,28 @@ const priceData = {
   manualTherapy: {
     title: "Terapie Manuală",
     items: [
-      { name: "Ședință Adult (60 min)", price: "450 MDL" },
-      { name: "Ședință Adolescent (45 min)", price: "350 MDL" },
-      { name: "Ședință Baby (30 min)", price: "300 MDL" },
+      { name: "Ședință Adult (60 min)", price: "125 €" },
+      { name: "Ședință Adolescent (45 min)", price: "120 €" },
+      { name: "Ședință Baby (30 min)", price: "115 €" },
     ],
   },
   specialized: {
     title: "Terapii Specializate",
     items: [
-      { name: "Terapie Viscerală", price: "500 MDL" },
-      { name: "Terapie ATM", price: "450 MDL" },
-      { name: "Drenaj Limfatic", price: "400 MDL" },
-      { name: "Drenaj Bronșic", price: "400 MDL" },
-      { name: "Gimnastică Schroth", price: "450 MDL" },
+      { name: "Terapie Viscerală", price: "128 €" },
+      { name: "Terapie ATM", price: "125 €" },
+      { name: "Drenaj Limfatic", price: "122 €" },
+      { name: "Drenaj Bronșic", price: "122 €" },
+      { name: "Gimnastică Schroth", price: "125 €" },
     ],
   },
   subscriptions: {
     title: "Abonamente",
     items: [
-      { name: "Pachet 5 ședințe", price: "2000 MDL", isPackage: true },
-      { name: "Pachet 10 ședințe", price: "3800 MDL", isPackage: true },
-      { name: "Abonament Yoga (lunar)", price: "800 MDL", isPackage: true },
-      { name: "Abonament Pilates (lunar)", price: "900 MDL", isPackage: true },
+      { name: "Pachet 5 ședințe", price: "210 €", isPackage: true },
+      { name: "Pachet 10 ședințe", price: "300 €", isPackage: true },
+      { name: "Abonament Yoga (lunar)", price: "145 €", isPackage: true },
+      { name: "Abonament Pilates (lunar)", price: "150 €", isPackage: true },
     ],
   },
 };
